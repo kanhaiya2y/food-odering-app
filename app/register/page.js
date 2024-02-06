@@ -4,16 +4,14 @@ import Image from 'next/image'
 const Register = () => {
   return (
  
-<div class="min-h-screen bg-gray-100 flex justify-center mt-10 ">
+<div class="min-h-screen bg-gray-100 flex justify-center  ">
 <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
     <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+      
+        <div class="mt-12 flex flex-col items-center">
         <h1 className='bg-red-600 font-semibold rounded-full px-6 py-2 text-4xl items-center'>
             Register
         </h1>
-        <div class="mt-12 flex flex-col items-center">
-            <h1 class="text-2xl xl:text-3xl font-extrabold">
-                Sign up
-            </h1>
             <div class="w-full flex-1 mt-8">
                 <div class="flex flex-col items-center">
                     <button
