@@ -24,12 +24,12 @@ export default function Header() {
         </nav>
 
         <nav className='flex gap-4 text-gray-600 items-center'>
-          <Link href={''}>
+          <Link href={'/sign-in'}>
             <div className='px-6 py-3 text-gray-500 font-semibold rounded-full'>
               Login
             </div>
           </Link>
-          <Link href={'/register'}>
+          <Link href={'/singup'}>
             <div className='bg-red-600 px-6 py-3 text-white rounded-full'>
               Register
             </div>
