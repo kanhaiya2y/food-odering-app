@@ -1,16 +1,15 @@
-'use client';
+"use client"
 import { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { createUserWithEmailAndPassword } from "firebase/auth"; // Importing createUserWithEmailAndPassword from correct path
 import { auth } from '@/app/firebase/config';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
 
   const handleSignUp = async () => {
     try {
-      const res = await createUserWithEmailAndPassword(email, password);
+      const res = await createUserWithEmailAndPassword(auth, email, password); // Passing 'auth' as first argument
       console.log({ res });
       sessionStorage.setItem('user', true);
       setEmail('');

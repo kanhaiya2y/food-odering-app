@@ -29,7 +29,7 @@ export default function Header() {
               Login
             </div>
           </Link>
-          <Link href={'/singup'}>
+          <Link href={'/sing-up'}>
             <div className='bg-red-600 px-6 py-3 text-white rounded-full'>
               Register
             </div>

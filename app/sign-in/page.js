@@ -1,25 +1,27 @@
-'use client'
+"use client"
 import { useState } from 'react';
-import {useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth'
-import {auth} from '@/app/firebase/config'
-import { useRouter } from 'next/navigation';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase/firebase';
+
+import { useRouter } from 'next/router'; // Correct import path
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
-  const router = useRouter()
+  const authInstance = getAuth(); // Remove 'auth' parameter from getAuth
+  const router = useRouter();
 
   const handleSignIn = async () => {
     try {
-        const res = await signInWithEmailAndPassword(email, password);
-        console.log({res});
-        sessionStorage.setItem('user', true)
-        setEmail('');
-        setPassword('');
-        router.push('/')
-    }catch(e){
-        console.error(e)
+      const res = await signInWithEmailAndPassword(authInstance, email, password); // Pass authInstance as the first argument
+      console.log({ res });
+      sessionStorage.setItem('user', true);
+      setEmail('');
+      setPassword('');
+      router.push('/');
+    } catch (e) {
+      console.error(e);
     }
   };
 
